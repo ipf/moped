@@ -1,0 +1,20 @@
+@(message: String, mopeds: List[models.Moped])(implicit flash: play.api.mvc.Flash)
+
+@main("Moped") {
+<div class="large-8 columns">
+	<h2>Mopeds in stock</h2>
+	<ul class="disc">
+	@for(moped <- mopeds) {
+		<li><a href="@routes.Mopeds.show(moped.id)">@moped.title</a></li>
+	}
+	</ul>
+</div>
+<div class="large-4 columns">
+	@flash.get("success").map { message =>
+	<div class="alert-box success">
+		<strong>Done!</strong> @message
+		<a href="" class="close">&times;</a>
+	</div>
+	}
+</div>
+}

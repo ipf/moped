@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /moped                      controllers.Application.moped
+GET     /mopeds                     controllers.Mopeds.all
+GET     /mopeds/sell                controllers.Mopeds.sell
+GET     /moped/:id                  controllers.Mopeds.show(id: ObjectId)
+POST    /mopeds/create              controllers.Mopeds.create
+POST    /mopeds/:id/delete          controllers.Mopeds.delete(id: ObjectId)
+POST    /mopeds/:id/buy             controllers.Mopeds.buy(id: ObjectId)
+POST    /mopeds/manufacturer/:manufacturer/ controllers.Mopeds.showManufacturer(manufacturer: String)
+
+# About section
+
+GET     /contact                    controllers.Content.contact
+GET     /terms                      controllers.Content.terms
+GET     /sourcecode                 controllers.Content.sourcecode
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

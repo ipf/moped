@@ -1,0 +1,52 @@
+@(message: String, form: Form[Moped])
+
+@main("Moped") {
+<div class="large-8 columns">
+		<h2>Sell a moped</h2>
+
+	@helper.form(action = routes.Mopeds.create) {
+	<fieldset>
+		<legend>Moped details</legend>
+
+		<div class="row">
+			<div class="large-12 columns">
+				@helper.inputText(form("title"), 'placeholder -> "Catchy title for your moped", '_label -> "Name your moped")
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-6 columns">
+				@helper.inputText(form("manufactured"), 'placeholder -> "1959", '_label -> "Manufactured")
+			</div>
+			<div class="large-6 columns">
+				@helper.inputText(form("manufacturer"), 'placeholder -> "Vespa, Schwalbe", '_label -> "Manufacturer")
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns">
+				@helper.textarea(form("description"), 'placeholder -> "Describe your moped", '_label -> "Description")
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<input type="file" name="picture">
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<input type="submit" class="button secondary" value="Sell" />
+			</div>
+		</div>
+	</fieldset>
+	}
+
+
+
+
+</div>
+
+<div class="row">
+
+</div>
+}
